@@ -1,0 +1,14 @@
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\bin\Debug\net8.0\EntityLayer.deps.json
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\bin\Debug\net8.0\EntityLayer.runtimeconfig.json
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\bin\Debug\net8.0\EntityLayer.dll
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\bin\Debug\net8.0\EntityLayer.pdb
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\EntityLayer.AssemblyInfo.cs
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\EntityLayer.dll
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\refint\EntityLayer.dll
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\EntityLayer.pdb
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\EntityLayer.genruntimeconfig.cache
+C:\Users\Gazi\source\repos\GaziFurWebSite\EntityLayer\obj\Debug\net8.0\ref\EntityLayer.dll

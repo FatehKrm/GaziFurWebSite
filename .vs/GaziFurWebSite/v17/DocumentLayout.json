@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Gazi\\source\\repos\\GaziFurWebSite\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF3B24D-E660-4B29-D6FD-8D13462DF086}|GaziFurWebSite\\GaziFurWebSite.csproj|c:\\users\\gazi\\source\\repos\\gazifurwebsite\\gazifurwebsite\\views\\addproduct\\updateproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFF3B24D-E660-4B29-D6FD-8D13462DF086}|GaziFurWebSite\\GaziFurWebSite.csproj|solutionrelative:gazifurwebsite\\views\\addproduct\\updateproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF3B24D-E660-4B29-D6FD-8D13462DF086}|GaziFurWebSite\\GaziFurWebSite.csproj|c:\\users\\gazi\\source\\repos\\gazifurwebsite\\gazifurwebsite\\controllers\\addproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFF3B24D-E660-4B29-D6FD-8D13462DF086}|GaziFurWebSite\\GaziFurWebSite.csproj|solutionrelative:gazifurwebsite\\controllers\\addproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{040AEF74-6603-4266-B4FD-04BA7E7FC119}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\gazi\\source\\repos\\gazifurwebsite\\dataaccesslayer\\entityframework\\efproductdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{040AEF74-6603-4266-B4FD-04BA7E7FC119}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\entityframework\\efproductdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EfProductDal.cs",
+              "DocumentMoniker": "C:\\Users\\Gazi\\source\\repos\\GaziFurWebSite\\DataAccessLayer\\EntityFrameWork\\EfProductDal.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\EntityFrameWork\\EfProductDal.cs",
+              "ToolTip": "C:\\Users\\Gazi\\source\\repos\\GaziFurWebSite\\DataAccessLayer\\EntityFrameWork\\EfProductDal.cs",
+              "RelativeToolTip": "DataAccessLayer\\EntityFrameWork\\EfProductDal.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwDoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T13:08:05.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Gazi\\source\\repos\\GaziFurWebSite\\GaziFurWebSite\\Controllers\\AddProductController.cs",
+              "RelativeDocumentMoniker": "GaziFurWebSite\\Controllers\\AddProductController.cs",
+              "ToolTip": "C:\\Users\\Gazi\\source\\repos\\GaziFurWebSite\\GaziFurWebSite\\Controllers\\AddProductController.cs",
+              "RelativeToolTip": "GaziFurWebSite\\Controllers\\AddProductController.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAswI0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T12:34:43.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UpdateProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gazi\\source\\repos\\GaziFurWebSite\\GaziFurWebSite\\Views\\AddProduct\\UpdateProduct.cshtml",
+              "RelativeDocumentMoniker": "GaziFurWebSite\\Views\\AddProduct\\UpdateProduct.cshtml",
+              "ToolTip": "C:\\Users\\Gazi\\source\\repos\\GaziFurWebSite\\GaziFurWebSite\\Views\\AddProduct\\UpdateProduct.cshtml",
+              "RelativeToolTip": "GaziFurWebSite\\Views\\AddProduct\\UpdateProduct.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAkwE4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T12:19:38.294Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

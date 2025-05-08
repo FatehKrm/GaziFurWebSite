@@ -1,0 +1,69 @@
+﻿@model List<EntityLayer.Concrate.Product>
+@{
+    ViewData["Title"] = "ProductDetail";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+
+                <!-- Kart -->
+                <div class="card shadow-lg rounded-4 overflow-hidden">
+
+                    <!-- SLIDER BAŞLANGIÇ -->
+                    <div id="carousel-@item.ProductId" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" style="height: 400px; overflow: hidden;">
+                            @for (int i = 0; i < item.ProductImages.Count; i++)
+                            {
+                                var image = item.ProductImages[i];
+                                <div class="carousel-item @(i == 0 ? "active" : "")">
+                                    <img src="@image.ImageUrl" class="d-block w-100 object-fit-cover h-100" alt="Fotoğraf @(i + 1)">
+                                </div>
+                            }
+                        </div>
+
+                        @if (item.ProductImages.Count > 1)
+                        {
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-@item.ProductId" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                                <span class="visually-hidden">Önceki</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-@item.ProductId" data-bs-slide="next">
+                                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                                <span class="visually-hidden">Sonraki</span>
+                            </button>
+                        }
+                    </div>
+                    <!-- SLIDER BİTİŞ -->
+                    <!-- İçerik -->
+                    <div class="card-body p-4">
+                        <h3 class="card-title mb-3 fw-bold">@item.Name</h3>
+                        <h5 class="text-success fw-semibold mb-4">@item.Price $</h5>
+
+                        <div class="mb-3">
+                            <p><strong>Kategori:</strong> @item.Category.Name</p>
+                            <p><strong>Renk:</strong> @item.Color.ColorName</p>
+                            <p><strong>Cinsiyet:</strong> @item.Gender</p>
+                            <p><strong>Beden:</strong> @item.Size</p>
+                            <p><strong>Açıklama:</strong> @item.Description</p>
+                        </div>
+                    </div>
+
+                    <!-- Butonlar -->
+                    <div class="card-footer bg-white d-flex justify-content-between px-4 py-3">
+                        <a asp-controller="AddProduct" asp-action="UpdateProduct" asp-route-id="@item.ProductId" class="btn btn-warning">
+                            Güncelle
+                        </a>
+                        <a asp-controller="AddProduct" asp-action="DeleteProduct" asp-route-id="@item.ProductId" class="btn btn-danger" onclick="return confirm('Bu ürünü silmek istediğinize emin misiniz?');">
+                            Sil
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

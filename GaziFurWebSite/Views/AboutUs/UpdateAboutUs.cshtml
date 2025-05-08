@@ -1,0 +1,162 @@
+﻿@model EntityLayer.Concrate.AboutUs
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda Güncelle</title>
+    <style>
+        :root {
+            --primary-color: #333;
+            --secondary-color: #555;
+            --accent-color: #4CAF50;
+            --border-color: #ddd;
+            --background-color: #f9f9f9;
+            --white: #fff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 10px 2px;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-danger {
+            color: #dc3545;
+            border: 1px solid #dc3545;
+            background-color: transparent;
+        }
+
+            .btn-outline-danger:hover {
+                background-color: #dc3545;
+                color: var(--white);
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hakkımızda Bilgilerini Güncelle</h1>
+
+        <form asp-action="UpdateAboutUs" method="post">
+            <input type="hidden" asp-for="AboutUsId" /> 
+            <input type="hidden" asp-for="ImageUrl"  value="image"/>
+            <input type="hidden" asp-for="MapAdress" value="https://maps.google.com/maps?q=40.993299,28.910166&z=17&output=embed" />
+            
+
+            <div class="form-group">
+                <label asp-for="Content">Hakkımızda İçeriği</label>
+                <textarea asp-for="Content" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Adress">Adres</label>
+                <input asp-for="Adress" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber">Telefon Numarası</label>
+                <input asp-for="PhoneNumber" type="tel" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WhatsApp">WhatsApp Numarası</label>
+                <input asp-for="WhatsApp" type="tel" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">E-posta Adresi</label>
+                <input asp-for="Email" type="email" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SocialMedia">Instagram Linki</label>
+                <input asp-for="SocialMedia" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Güncelle" />
+                <a  class="btn btn-danger">İptal</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

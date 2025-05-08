@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrate.Product
+@{
+    ViewData["Title"] = "DenemeAddProduct";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Ürün Ekle</h2>
+
+<form method="post" action="/AddProduct/DenemeAddProduct">
+
+    <label>Ürün Adı</label><br />
+    <input type="text" name="Name" /><br /><br />
+
+    <label>Açıklama</label><br />
+    <input type="text" name="Description" /><br /><br />
+
+    <label>Kategori Id</label><br />
+    <input type="text" name="CategoryId" /><br /><br />
+
+    <label>Renk Id</label><br />
+    <input type="text" name="ColorId" /><br /><br />
+
+    <label>Fiyat</label><br />
+    <input type="text" name="Price" /><br /><br />
+
+    <label>Cinsiyet</label><br />
+    <input type="text" name="Gender" /><br /><br />
+
+    <label>Öne Çıkarılsın mı?</label><br />
+    <input type="text" name="IsFeatured" /><br /><br />
+
+    <label>Görsel Url</label><br />
+    <input type="text" name="ImageUrl" /><br /><br />
+
+    <label>Beden</label><br />
+    <input type="text" name="Size" /><br /><br />
+
+
+
+    <button type="submit">Ürünü Kaydet</button>
+
+</form>

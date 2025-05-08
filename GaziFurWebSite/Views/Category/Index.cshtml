@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Ekle</title>
+    <style>
+        :root {
+            --primary-color: #333;
+            --secondary-color: #555;
+            --accent-color: #4CAF50;
+            --border-color: #ddd;
+            --background-color: #f9f9f9;
+            --white: #fff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+            button[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+        .button-group {
+            margin-top: 30px;
+            text-align: right;
+        }
+
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+            border: 1px solid var(--border-color);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kategori Ekle</h1>
+        <form id="categoryForm" method="post" enctype="multipart/form-data" action="/Category/Index">
+            <div class="form-group">
+                <label for="categoryName">Kategori Adı</label>
+                <input type="text" id="categoryName" name="Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoryDescription">Açıklama</label>
+                <textarea id="categoryDescription" name="Description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="photoUpload">Görsel Yükle</label>
+                <input type="file" id="photoUpload" name="Photo" accept="image/*" onchange="previewFile(this)">
+                <img id="imagePreview" class="preview-image" alt="Kategori görseli önizleme">
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Kategori Ekle</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function previewFile(input) {
+            const preview = document.getElementById('imagePreview');
+            const file = input.files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

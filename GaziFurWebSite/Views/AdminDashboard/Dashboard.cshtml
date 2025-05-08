@@ -1,0 +1,278 @@
+﻿@model List<EntityLayer.Concrate.Product>
+@{
+	ViewData["Title"] = "Dashboard";
+	Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class="row">
+	<div class="ms-3">
+		<h3 class="mb-0 h4 font-weight-bolder">Ana Sayfa</h3>
+		<p class="mb-4">
+			Görüntüleme, aboneler, ve ürün stoğunu takip et
+		</p>
+	</div>
+</div>
+<div class="container-fluid py-2">
+	<div class="row">
+		<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+			<div class="card">
+				<div class="card-header p-2 ps-3">
+					<div class="d-flex justify-content-between">
+						<div>
+							<p class="text-sm mb-0 text-capitalize">Görüntülenme</p>
+							<h4 class="mb-0">1000</h4>
+						</div>
+						<div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+							<i class="material-symbols-rounded opacity-10">weekend</i>
+						</div>
+					</div>
+				</div>
+				<hr class="dark horizontal my-0">
+				<div class="card-footer p-2 ps-3">
+					<p class="mb-0 text-sm"><span class="text-success font-weight-bolder">+55% </span> geçen haftaya göre </p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+			<div class="card">
+				<div class="card-header p-2 ps-3">
+					<div class="d-flex justify-content-between">
+						<div>
+							<p class="text-sm mb-0 text-capitalize">Siteye kayıt olanlar</p>
+							<h4 class="mb-0">256</h4>
+						</div>
+						<div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+							<i class="material-symbols-rounded opacity-10">person</i>
+						</div>
+					</div>
+				</div>
+				<hr class="dark horizontal my-0">
+				<div class="card-footer p-2 ps-3">
+					<p class="mb-0 text-sm"><span class="text-success font-weight-bolder">+3% </span>geçen aya göre</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+			<div class="card">
+				<div class="card-header p-2 ps-3">
+					<div class="d-flex justify-content-between">
+						<div>
+							<p class="text-sm mb-0 text-capitalize">Toplam stok</p>
+							<h4 class="mb-0">1022</h4>
+						</div>
+						<div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+							<i class="material-symbols-rounded opacity-10">leaderboard</i>
+						</div>
+					</div>
+				</div>
+				<hr class="dark horizontal my-0">
+				<div class="card-footer p-2 ps-3">
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-sm-6">
+			<div class="card">
+				<div class="card-header p-2 ps-3">
+					<div class="d-flex justify-content-between">
+						<div>
+							<p class="text-sm mb-0 text-capitalize">Kur fiyatı</p>
+							<h4 class="mb-0">$38.01</h4>   <!-- Api ile veri çekilecek -->
+						</div>
+						<div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+							<i class="material-symbols-rounded opacity-10">weekend</i>
+						</div>
+					</div>
+				</div>
+
+				<hr class="dark horizontal my-0">
+				<div class="card-footer p-2 ps-3">
+					<!-- footer -->
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+
+		<div class="row mt-4 justify-content-center">
+			<div class="col-12 col-lg-8">
+				<!-- Daha dar bir genişlik için col-lg-8 kullanıldı -->
+				<div class="card">
+					<div class="card-header p-3">
+						<div class="d-flex justify-content-between align-items-center">
+							<h5 class="mb-0">Son Eklenen Ürünler</h5>
+							<div>
+								<button type="button" class="btn btn-sm btn-outline-dark mx-1" id="prevProductBtn">
+									<i class="material-symbols-rounded">chevron_left</i>
+								</button>
+								<span id="currentSlide">1</span> / <span id="totalSlides">3</span>
+								<button type="button" class="btn btn-sm btn-outline-dark mx-1" id="nextProductBtn">
+									<i class="material-symbols-rounded">chevron_right</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="card-body p-3 d-flex justify-content-center">
+						<div class="product-slider position-relative">
+							<!-- Slider container -->
+							<div class="slider-container overflow-hidden">
+								<div class="slides-wrapper" id="slidesWrapper">
+
+									<!-- Ürün 1 for döngüsü  ************  -->
+									@foreach (var item in Model)
+									{
+										<div class="product-slide">
+											<div class="row align-items-center">
+												<div class="col-5 position-relative">
+													<span class="position-absolute top-0 start-0 m-2 badge bg-success z-index-2">Yeni</span>
+													<img src="@item.ProductImages.FirstOrDefault()?.ImageUrl" class="img-fluid rounded product-image" alt="Ürün Görseli 1"> <!-- İlk fotoğrafı alır daha mantıklı -->
+												</div>
+											
+												<div class="col-7">
+													<h6 class="mb-2">Ürün adı : </h6>
+													<p class="text-muted mb-2">@item.Name</p>
+													<h6 class="mb-2">Ürün rengi :  </h6>
+													<p class="text-muted mb-2">@item.Color.ColorName</p>
+													<h6 class="mb-2">Açıklama :  </h6>
+													<p class="small mb-0">@item.Description</p>
+												</div>
+											</div>
+										</div>
+									}
+								</div>
+							</div>
+						</div>
+						<a href="/AddProduct/ListAllProducts"><div class="btn btn-dark-blue">Tüm ürünleri listele</div></a>
+					</div>
+				</div>
+				<div class="row mt-4 justify-content-center">
+					<div class="col-12 col-lg-8">
+					</div>
+				</div>
+
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						// Slider için gerekli değişkenler
+						const slidesWrapper = document.getElementById('slidesWrapper');
+						const prevBtn = document.getElementById('prevProductBtn');
+						const nextBtn = document.getElementById('nextProductBtn');
+						const currentSlideEl = document.getElementById('currentSlide');
+						const totalSlidesEl = document.getElementById('totalSlides');
+						const slides = document.querySelectorAll('.product-slide');
+
+						let currentIndex = 0;
+						const totalSlides = slides.length;
+
+						// Toplam slide sayısını güncelle
+						totalSlidesEl.textContent = totalSlides;
+
+						// İleri gitme fonksiyonu
+						function nextSlide() {
+							currentIndex = (currentIndex + 1) % totalSlides;
+							updateSlider();
+						}
+
+						// Geri gitme fonksiyonu
+						function prevSlide() {
+							currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+							updateSlider();
+						}
+
+						// Slider pozisyonunu güncelleme
+						function updateSlider() {
+							// Tüm slideları gizle
+							slides.forEach(slide => {
+								slide.style.display = 'none';
+							});
+
+							// Aktif slide'ı göster
+							slides[currentIndex].style.display = 'block';
+
+							// Sayaç metnini güncelle
+							currentSlideEl.textContent = currentIndex + 1;
+						}
+
+						// Butonlara olay dinleyicileri ekleme
+						nextBtn.addEventListener('click', function() {
+							clearInterval(autoSlideInterval); // Otomatik geçişi durdur
+							nextSlide();
+							startAutoSlide(); // Otomatik geçişi yeniden başlat
+						});
+
+						prevBtn.addEventListener('click', function() {
+							clearInterval(autoSlideInterval); // Otomatik geçişi durdur
+							prevSlide();
+							startAutoSlide(); // Otomatik geçişi yeniden başlat
+						});
+
+						// Başlangıçta ilk slide'ı göster
+						updateSlider();
+
+						// Otomatik geçiş için değişken
+						let autoSlideInterval;
+
+						// Otomatik geçiş fonksiyonu
+						function startAutoSlide() {
+							autoSlideInterval = setInterval(nextSlide, 5000); // 5 saniyede bir geçiş yap
+						}
+
+						// Sayfa yüklendiğinde otomatik geçişi başlat
+						startAutoSlide();
+					});
+				</script>
+
+				<style>
+					.card-body {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+					}
+
+					.product-slider {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 100%;
+					}
+
+					.slider-container {
+						max-width: 100%;
+						width: 100%;
+					}
+
+					.product-slide {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.product-slider {
+						min-height: 200px;
+					}
+
+					.slider-container {
+						position: relative;
+					}
+
+					.slides-wrapper {
+						width: 100%;
+					}
+
+					.product-slide {
+						display: none;
+						width: 100%;
+						padding: 10px;
+					}
+
+					.product-image {
+						max-height: 200px;
+						object-fit: contain; /* Resmi kırpmadan sığdır */
+						width: 100%;
+					}
+
+					.z-index-2 {
+						z-index: 2;
+					}
+				</style>

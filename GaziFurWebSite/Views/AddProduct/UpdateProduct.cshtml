@@ -1,0 +1,111 @@
+﻿@model List<EntityLayer.Concrate.Product>
+@{
+    ViewData["Title"] = "Ürün Güncelle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    var product = Model.FirstOrDefault();
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Ürün Güncelleme Sayfası</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="@product.ProductId" />
+                        <input type="hidden" name="CategoryId" value="@product.CategoryId" />
+                        <input type="hidden" name="ColorId" value="@product.ColorId" />
+
+                        <div class="form-group">
+                            <label>Ürün Adı</label>
+                            <input type="text" asp-for="@product.Name" class="form-control" />
+                            <span asp-validation-for="@product.Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ürün Açıklaması</label>
+                            <textarea asp-for="@product.Description" class="form-control" rows="4"></textarea>
+                            <span asp-validation-for="@product.Description" class="text-danger"></span>
+                        </div>
+
+                  
+
+                        <div class="form-group">
+                            <label>Fiyat</label>
+                            <input type="text" asp-for="@product.Price" class="form-control" />
+                            <span asp-validation-for="@product.Price" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cinsiyet</label>
+                            <select asp-for="@product.Gender" class="form-control">
+                                <option value="@product.Gender">@product.Gender</option>
+                                <option value="Erkek">Erkek</option>
+                                <option value="Kadın">Kadın</option>
+                            </select>
+                            <span asp-validation-for="@product.Gender" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Beden</label>
+                            <input type="text" asp-for="@product.Size" class="form-control" />
+                            <span asp-validation-for="@product.Size" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Öne Çıkarılsın mı?</label>
+                            <select asp-for="@product.IsFeatured" class="form-control">
+                                <option value="@product.IsFeatured">@(product.IsFeatured == "1" ? "Evet" : "Hayır")</option>
+                                <option value="1">Evet</option>
+                                <option value="0">Hayır</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mevcut Ürün Resimleri</label>
+                            <div class="row">
+                                @if (product.ProductImages != null && product.ProductImages.Any())
+                                {
+                                    foreach (var image in product.ProductImages)
+                                    {
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card">
+                                                <img src="@image.ImageUrl" class="card-img-top img-thumbnail" style="height: 150px; object-fit: cover;" />
+                                                <div class="card-body">
+                                                    <a href="/Admin/ProductImage/Delete/@image.ImageUrl" class="btn btn-sm btn-danger"
+                                                       onclick="return confirm('Bu resmi silmek istediğinizden emin misiniz?')">
+                                                        Sil
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="col-12">
+                                        <p class="text-muted">Bu ürüne ait resim bulunmamaktadır.</p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Yeni Resim Ekle</label>
+                            <a href="/Admin/ProductImage/AddProductImage/@product.ProductId" class="btn btn-primary">
+                                Yeni Resim Ekle
+                            </a>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Güncelle</button>
+                            <a href="/Admin/Product/Index" class="btn btn-secondary">İptal</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
